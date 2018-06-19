@@ -1,0 +1,12 @@
+#!/bin/sh  
+  
+result=1  
+sleep 1s  
+result=`pidof brook_linux_arm5`  
+if [ "$result" ]; then  
+    echo `date`"  brook normal"
+else
+    echo `date`"  brook restart"
+    /root/brook/brook.sh &
+fi
+
